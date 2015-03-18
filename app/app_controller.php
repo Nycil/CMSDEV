@@ -13,7 +13,7 @@ class AppController extends Controller
 	function beforeFilter() 
 	{
 		$this->Auth->autoRedirect = false;
-		$this->Auth->loginAction = array('admin'=>true,'controller'=>'users','action'=>'login');
+		//$this->Auth->loginAction = array('admin'=>true,'controller'=>'users','action'=>'login');
 		$this->Auth->allow('admin_login','admin_logout','index','display','verdict','verdict_list','contactus','disclaimer', 'news', 'press');
 		$this->Auth->loginError = '<p align="center">Invalid Username and/or Password</p>';
 		$this->Auth->authError = '<p align="center">You are not authorized to access that page</p>';

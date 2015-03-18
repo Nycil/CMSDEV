@@ -178,7 +178,7 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
-	 function admin_login() 
+	function admin_login() 
 	{
 		$this->layout = "default2";
 		if ($this->Session->read('Auth.User')) 
@@ -188,6 +188,7 @@ class UsersController extends AppController {
 		if(isset($this->data['User']['username']))
 		{
 			$conditions=array('username' => $this->data['User']['username'], 'password' => $this->Auth->password($this->data['User']['password']));
+			
 			$admin=$this->User->find('all', array('conditions'=>$conditions));
 			if(count($admin)>0)
 			{
@@ -203,7 +204,7 @@ class UsersController extends AppController {
 			}
 		}
     }
-	 function login() 
+	function login() 
 	{
 		$this->layout = "default2";
 		if ($this->Session->read('Auth.User')) 

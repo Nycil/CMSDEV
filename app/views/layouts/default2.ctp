@@ -58,7 +58,7 @@
 $this->Session->flash('auth');
 ?>
 				
-				<form id="UserLoginForm" method="post" action="/admin/users/login">
+				<form id="UserLoginForm" method="post" action="<?php echo HOST_ADDRESS; ?>admin/users/login">
 				
 					<div class="notification information png_bg" style="display:none;">
 						<div>
